@@ -511,4 +511,8 @@
 
     <!-- Recents -->
     <string name="action_lens">Lens</string>
+
+    <!-- Restart launcher -->
+    <string name="pref_restart_title">Restart</string>
+    <string name="pref_restart_summary">Restart the launcher manually to apply any pending settings</string>
 </resources>

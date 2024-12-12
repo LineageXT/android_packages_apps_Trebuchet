@@ -23,7 +23,12 @@
         android:title="@string/notification_dots_title"
         android:persistent="false"
         android:widgetLayout="@layout/notification_pref_warning" />
-    
+
+    <com.android.launcher3.settings.preference.RestartPreference
+        android:key="pref_restart"
+        android:title="@string/pref_restart_title"
+	android:summary="@string/pref_restart_summary" />
+
     <SwitchPreferenceCompat
         android:defaultValue="false"
         android:key="pref_workspace_lock"
