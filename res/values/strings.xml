@@ -502,8 +502,8 @@
     <string name="ps_add_button_content_description">Install apps to Private Space</string>
 
     <!-- App drawer scrollbar -->
-    <string name="drawer_scrollbar_title">Scrollbar</string>
-    <string name="drawer_scrollbar_summary">Scrollbar on side of the app drawer</string>
+    <string name="drawer_scrollbar_title">Show scrollbar</string>
+    <string name="drawer_scrollbar_summary">Toggle visibility of scrollbar on the side of App Drawer</string>
 
     <!-- Force monochrome icons -->
     <string name="force_monochrome_icons_title">Force themed icons</string>
