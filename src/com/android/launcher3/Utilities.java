@@ -884,4 +884,7 @@ public final class Utilities {
             return false;
         }
     }
+    public static int getRecentsOpacity(Context context) {
+        return 0;
+    }
 }
