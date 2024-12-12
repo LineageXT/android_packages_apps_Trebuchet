@@ -124,6 +124,7 @@ public final class Utilities {
     public static final String LENS_SHARE_ACTIVITY = "com.google.android.apps.search.lens.LensShareEntryPointActivity";
     
     public static final String KEY_FORCE_MONOCHROME_ICON = "pref_force_monochrome_icon";
+    public static final String KEY_DRAWER_SCROLLBAR = "pref_drawer_scrollbar";
 
     private static final Pattern sTrimPattern =
             Pattern.compile("^[\\s|\\p{javaSpaceChar}]*(.*)[\\s|\\p{javaSpaceChar}]*$");
@@ -886,7 +887,12 @@ public final class Utilities {
             return false;
         }
     }
-    
+   
+    public static boolean showScrollbar(Context context) {
+        SharedPreferences prefs = LauncherPrefs.getPrefs(context.getApplicationContext());
+        return prefs.getBoolean(KEY_DRAWER_SCROLLBAR, true);
+    }
+
     public static int getRecentsOpacity(Context context) {
         return 0;
     }
