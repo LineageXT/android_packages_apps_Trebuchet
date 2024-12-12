@@ -331,6 +331,15 @@ public class TaskOverlayFactory implements ResourceBasedOverride {
             public void onSaveAppPair() {
                 endLiveTileMode(TaskOverlay.this::saveAppPair);
             }
+
+	    @Override
+            public void onLens() {
+                if (mIsAllowedByPolicy) {
+                    endLiveTileMode(() -> mImageApi.startLensActivity());
+                } else {
+                    showBlockedByPolicyMessage();
+                }
+            }
         }
     }
 
@@ -347,5 +356,7 @@ public class TaskOverlayFactory implements ResourceBasedOverride {
 
         /** User wants to save an app pair with current group of apps. */
         void onSaveAppPair();
+
+	void onLens();
     }
 }

@@ -500,4 +500,7 @@
     <string name="ps_add_button_label">Install</string>
     <!-- Content description for install app icon -->
     <string name="ps_add_button_content_description">Install apps to Private Space</string>
+
+    <!-- Recents -->
+    <string name="action_lens">Lens</string>
 </resources>
