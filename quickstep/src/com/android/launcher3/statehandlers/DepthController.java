@@ -133,6 +133,10 @@ public class DepthController extends BaseDepthController implements StateHandler
             return;
         }
 
+	if (toState == LauncherState.OVERVIEW) {
+	    applyDepthAndBlur();
+	    return;
+	}
         stateDepth.setValue(toState.getDepth(mLauncher));
         if (toState == LauncherState.BACKGROUND_APP) {
             mLauncher.getDragLayer().getViewTreeObserver().addOnDrawListener(mOnDrawListener);

@@ -25,6 +25,7 @@ import android.view.AttachedSurfaceControl;
 import android.view.SurfaceControl;
 
 import com.android.launcher3.Launcher;
+import com.android.launcher3.LauncherState;
 import com.android.launcher3.R;
 import com.android.launcher3.Utilities;
 import com.android.launcher3.util.MultiPropertyFactory;
@@ -156,7 +157,8 @@ public class BaseDepthController {
             return;
         }
         mWaitingOnSurfaceValidity = false;
-        boolean hasOpaqueBg = mLauncher.getScrimView().isFullyOpaque();
+	boolean isOverview = mLauncher.isInState(LauncherState.OVERVIEW);
+        boolean hasOpaqueBg = mLauncher.getScrimView().isFullyOpaque() && !isOverview;
         boolean isSurfaceOpaque = !mHasContentBehindLauncher && hasOpaqueBg && !mPauseBlurs;
 
         float blurAmount;
@@ -165,7 +167,7 @@ public class BaseDepthController {
         } else {
             blurAmount = depth;
         }
-        mCurrentBlur = !mCrossWindowBlursEnabled || hasOpaqueBg || mPauseBlurs
+        mCurrentBlur = !mCrossWindowBlursEnabled || hasOpaqueBg || mPauseBlurs || isOverview
                 ? 0 : (int) (blurAmount * mMaxBlurRadius);
 
         SurfaceControl.Transaction transaction = new SurfaceControl.Transaction()
